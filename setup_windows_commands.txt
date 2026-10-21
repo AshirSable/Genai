@@ -1,0 +1,41 @@
+Environment setup (Windows). Run in COMMAND PROMPT (Start, type cmd, Enter), NOT PowerShell.
+One block per topic. Start the installs first, one window per topic (5 to 15 min each).
+Success check: after the activate line you see (gan) / (imggen) / (music) / (detect) at the start of the line.
+In Jupyter: New, then Python (<topic name>). Next time: run only the activate line + the last line.
+Check first: py -3.13 --version  (if 'py' not found, use 'python' instead of 'py -3.13')
+
+==================== GAN (TensorFlow) ====================
+py -3.13 -m venv C:\dl\gan
+C:\dl\gan\Scripts\activate
+python -m pip install --upgrade pip
+pip install tensorflow==2.21.0 keras==3.15.1 matplotlib notebook ipykernel ipywidgets
+python -m ipykernel install --sys-prefix --name gan --display-name "Python (gan)"
+pip check
+jupyter notebook --notebook-dir=C:\dl
+
+==================== Image generation ====================
+py -3.13 -m venv C:\dl\imggen
+C:\dl\imggen\Scripts\activate
+python -m pip install --upgrade pip
+pip install torch==2.14.1 diffusers==0.41.0 transformers==5.20.2 accelerate==1.15.0 huggingface-hub==1.33.0 truststore==0.10.5 matplotlib pillow notebook ipykernel ipywidgets
+python -m ipykernel install --sys-prefix --name imggen --display-name "Python (imggen)"
+pip check
+jupyter notebook --notebook-dir=C:\dl
+
+==================== Music generation ====================
+py -3.13 -m venv C:\dl\music
+C:\dl\music\Scripts\activate
+python -m pip install --upgrade pip
+pip install torch==2.14.1 transformers==5.20.2 accelerate==1.15.0 huggingface-hub==1.33.0 scipy truststore==0.10.5 matplotlib notebook ipykernel ipywidgets
+python -m ipykernel install --sys-prefix --name music --display-name "Python (music)"
+pip check
+jupyter notebook --notebook-dir=C:\dl
+
+==================== Object detection ====================
+py -3.13 -m venv C:\dl\detect
+C:\dl\detect\Scripts\activate
+python -m pip install --upgrade pip
+pip install torch==2.14.1 torchvision==0.29.1 ultralytics==8.4.183 truststore==0.10.5 matplotlib pillow notebook ipykernel ipywidgets
+python -m ipykernel install --sys-prefix --name detect --display-name "Python (detect)"
+pip check
+jupyter notebook --notebook-dir=C:\dl
